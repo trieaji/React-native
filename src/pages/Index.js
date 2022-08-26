@@ -2,18 +2,21 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { View, StyleSheet, Text, TextInput, TouchableOpacity } from "react-native";
 
-export default function Index() {
+import Login from "../components/modals/Login";
+import Register from "../components/modals/Register";
+
+export default function Index({navigation}) {
   return (
     <View style={style.countainer}>
       <StatusBar />
       {/* Code Here */}
       <Text style={style.header}>Write your activity and finish your activity. Fast, Simple and Easy to use</Text>
 
-      <TouchableOpacity style={style.button}>
+      <TouchableOpacity style={style.button} onPress={() => navigation.navigate('Login')}>
         <Text style={style.textButton}>Login</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={style.button}>
+      <TouchableOpacity style={style.button} onPress={() => navigation.navigate("Register")}>
         <Text style={style.textButton}>Register</Text>
       </TouchableOpacity>
     
